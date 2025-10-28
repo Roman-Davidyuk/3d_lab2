@@ -88,39 +88,27 @@ const bushNormalTexture = textureLoader.load(
 
 // --- Могили ---
 const graveColorTexture = textureLoader.load(
-  "./grave/muddy_road_01_1k/muddy_road_01_diff_1k.jpg"
+  "./grave/plastered_stone_wall_1k/plastered_stone_wall_diff_1k.jpg"
 );
-graveColorTexture.colorSpace = THREE.SRGBColorSpace;
 const graveARMTexture = textureLoader.load(
-  "./grave/muddy_road_01_1k/muddy_road_01_arm_1k.jpg"
+  "./grave/plastered_stone_wall_1k/plastered_stone_wall_arm_1k.jpg"
 );
 const graveNormalTexture = textureLoader.load(
-  "./grave/muddy_road_01_1k/muddy_road_01_nor_gl_1k.jpg"
+  "./grave/plastered_stone_wall_1k/plastered_stone_wall_nor_gl_1k.jpg"
 );
 
 // --- Двері ---
-const doorColorTexture = textureLoader.load(
-  "./door/old_wooden_door_01_1k/old_wooden_door_01_diff_1k.jpg"
-);
-doorColorTexture.colorSpace = THREE.SRGBColorSpace;
-const doorAlphaTexture = textureLoader.load(
-  "./door/old_wooden_door_01_1k/old_wooden_door_01_opacity.jpg"
-);
+const doorColorTexture = textureLoader.load("./door/color.jpg");
+const doorAlphaTexture = textureLoader.load("./door/alpha.jpg");
 const doorAmbientOcclusionTexture = textureLoader.load(
-  "./door/old_wooden_door_01_1k/old_wooden_door_01_ao_1k.jpg"
+  "./door/ambientOcclusion.jpg"
 );
-const doorHeightTexture = textureLoader.load(
-  "./door/old_wooden_door_01_1k/old_wooden_door_01_disp_1k.jpg"
-);
-const doorNormalTexture = textureLoader.load(
-  "./door/old_wooden_door_01_1k/old_wooden_door_01_nor_gl_1k.jpg"
-);
-const doorMetalnessTexture = textureLoader.load(
-  "./door/old_wooden_door_01_1k/old_wooden_door_01_metal_1k.jpg"
-);
-const doorRoughnessTexture = textureLoader.load(
-  "./door/old_wooden_door_01_1k/old_wooden_door_01_rough_1k.jpg"
-);
+const doorHeightTexture = textureLoader.load("./door/height.jpg");
+const doorNormalTexture = textureLoader.load("./door/normal.jpg");
+const doorMetalnessTexture = textureLoader.load("./door/metalness.jpg");
+const doorRoughnessTexture = textureLoader.load("./door/roughness.jpg");
+
+doorColorTexture.colorSpace = THREE.SRGBColorSpace;
 
 // --- 3. Об'єкти Сцени ---
 
@@ -204,7 +192,7 @@ doorGeometry.setAttribute(
 const doorMaterial = new THREE.MeshStandardMaterial({
   map: doorColorTexture,
   alphaMap: doorAlphaTexture,
-  transparent: true,
+
   aoMap: doorAmbientOcclusionTexture,
   metalness: 0,
   roughness: 1,
